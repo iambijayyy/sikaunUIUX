@@ -1,51 +1,57 @@
 import mongoose from 'mongoose';
 const { Schema, model } = mongoose;
 
-const userSchema = new Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    profileImage: {
-        type: String
-    },
-    lastName: {
-        type: String,
-        required: true
-    },
-    mail: {
-        type: String,
-        required: true
-    },
-    password: {
-        type: String,
-        required: true
-    },
-    role: {
-        type: String,
-        required: true
-    },
-    courses: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Course'
-    }],
-    verificationCode: {
-        type: String
-    }
+const courseSchema = new Schema({
+	name: {
+		type: String,
+		required: true,
+	},
+
+	level: {
+		type: String,
+		required: true,
+	},
+
+	tags: {
+		type: [String],
+	},
+
+	cover: {
+		type: String,
+		required: true,
+	},
+
+	creator: {
+		type: Schema.Types.ObjectId,
+		ref: 'User',
+		required: true,
+	},
+
+	episodes: {
+		type: [Schema.Types.ObjectId],
+		ref: 'Episode',
+	},
+
+	subscribers: {
+		type: [Schema.Types.ObjectId],
+		ref: 'User',
+	},
+
+	folder: {
+		type: String,
+		required: true,
+	},
 });
 
+courseSchema.set('toJSON', {
+	transform: (document, returnedObject) => {
+		returnedObject.id = returnedObject._id;
 
-userSchema.set('toJSON', {
-    transform: (document, returnedObject) => {
-        returnedObject.id = returnedObject._id;
+		delete returnedObject._id;
+		delete returnedObject.__v;
+	},
+});
 
-        delete returnedObject.password;
-        delete returnedObject._id;
-        delete returnedObject.__v;
-    }
-})
+const Course = model('Course', courseSchema);
 
-
-const User = model('User', userSchema);
-
-export default User;
+export default Course;
