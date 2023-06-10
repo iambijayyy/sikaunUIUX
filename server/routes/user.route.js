@@ -1,27 +1,37 @@
 import { Router } from 'express';
-import auth from '../controllers/auth.controller.js';
+import userController from '../controllers/user.controller.js';
+import { imageUploader } from './images.route.js';
+import { isUserAdmin, isUser } from '../middlewares/isUserRole.js';
 import isBodyAUser from '../dtos/isBodyAUser.js';
 
-// ALSO TEMPORAL
-import User from '../models/user.js';
+const userRouter = Router();
 
-const authRouter = Router();
+// Get all users
+userRouter.get('/', isUserAdmin, userController.getAll);
 
-// Log the user
-authRouter.post('/login', auth.login);
+// Get one
+userRouter.get('/user/:id', userController.getOne);
 
-// Register the user
-authRouter.post('/signup', isBodyAUser, auth.signup);
+// Edit user info
+userRouter.patch('/:userId/edit', isUser, imageUploader.single('profileImage'), isBodyAUser, userController.edit);
 
-// TEMPORAL
-authRouter.get('/admin', (req, res, next) => {
-    const userId = req.query.user;
+// Promote the user
+userRouter.patch('/edit/range/:userId/:rank', isUserAdmin, userController.editRange);
 
-    User.findByIdAndUpdate({ _id: userId }, { role: 'admin' }, { new: true })
-    .then(updatedUser => {
-        return res.status(200).json(updatedUser);
-    })
-    .catch(error => next(error))
-})
+// Delete the user
+userRouter.delete('/:userId/remove', isUserAdmin, userController.remove);
 
-export default authRouter;
+
+// Update password
+userRouter.patch('/:userId/edit/update-password', isUser, userController.updatePassword);
+
+
+// Forgot password
+userRouter.post('/forgot-password', userController.forgotPassword);
+
+// Verify Code
+userRouter.post('/verify-code', userController.verifyCode);
+
+// Reset password
+userRouter.post('/reset-password', userController.resetPassword);
+export default userRouter;
