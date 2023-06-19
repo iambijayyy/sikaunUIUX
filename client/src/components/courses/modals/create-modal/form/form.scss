@@ -1,0 +1,21 @@
+.create-course-form {
+    .validation-input {
+        margin: 1.5rem 0;
+        width: 100%;
+    }
+
+    .levels-container {
+        margin: 1.5rem 0;
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+
+    }
+
+    .actions-container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: .8rem;
+    }
+}

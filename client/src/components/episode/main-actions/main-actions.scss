@@ -1,0 +1,60 @@
+@use 'src/global/_variables.scss';
+
+.main-actions {
+	height: 2.6rem;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	.right {
+		height: 2.6rem;
+
+		display: flex;
+		align-items: center;
+		gap: 0.8rem;
+
+		.disabled {
+			background: variables.$sixth-color;
+			cursor: no-drop;
+
+			.icon {
+				transform: none;
+				rotate: none;
+			}
+		}
+	}
+
+	.action-button {
+		background: variables.$third-color;
+		border-radius: 40px;
+
+		width: -moz-fit-content;
+		width: fit-content;
+
+		height: 100%;
+
+		padding: 0.5rem 2rem;
+
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+
+		&:disabled,
+		&.disabled {
+			background: variables.$seventh-color;
+
+			.icon {
+				cursor: not-allowed;
+				transform: none;
+				rotate: none;
+			}
+		}
+
+		button {
+			.icon {
+				font-size: 1.87rem;
+			}
+		}
+	}
+}

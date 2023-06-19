@@ -1,0 +1,109 @@
+@use 'src/global/_variables.scss';
+
+.main-footer {
+    background: linear-gradient(180deg, #0E1C26 0.01%, #172A32 50.83%, #2A454B 100%);
+    padding: 4rem 0 0 0;
+
+    .main-information {
+        padding: 2.5rem 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        .credits-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .credits {
+                p {
+                    width: 13rem;
+                    font-weight: bold;
+                    font-family: variables.$secondary-font;
+                }
+            }
+        }
+
+        .footer-section-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            .footer-section {
+                h4 {
+                    text-align: center;
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                }
+
+                .footer-item {
+                    margin: 1rem 0;
+
+                    h5 {
+                        text-align: center;
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+
+        .social-media {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .5rem;
+
+            h5 {
+                text-align: center;
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+
+            .icons {
+                .icon {
+                    width: 40px;
+                    height: 40px;
+                    margin: 0 .5rem;
+                    aspect-ratio: 1/1;
+                }
+            }
+        }
+    }
+
+    .copy-section {
+        padding: 0 6rem;
+
+        .copyright {
+            border-top: 2px solid variables.$main-text-color;
+            padding: 1rem 0;
+
+            p {
+                text-align: center;
+
+                a {
+                    padding: 0 .2rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: variables.$mobile-breakpoint) {
+    .main-footer {
+        padding: 2rem 0 0 0;
+
+        .main-information {
+            grid-template-columns: 100%;
+
+            .social-media{ 
+                display: none;
+            }
+
+            .footer-section-container {
+                display: none;
+            }
+        }
+
+        .copy-section {
+            padding: 0 2rem;
+        }
+    }
+}

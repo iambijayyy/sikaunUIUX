@@ -1,0 +1,55 @@
+@use 'src/global/_variables.scss';
+
+.login-form {
+    display: grid;
+    gap: 1.5rem;
+
+    .inputs-container {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        gap: 1.5rem;
+
+        .validation-input {
+            width: 100%;
+        }
+    }
+
+    .actions-container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .errors-container {
+        width: 100%;
+
+        .errors {
+            width: 100%;
+            color: variables.$smooth-red;
+        }
+    }
+}
+
+@media (max-width: variables.$mobile-breakpoint) {
+    .login-form {
+        .first-row {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, 1fr);
+    
+        }
+
+        .actions-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            a {
+                margin: 0 1.2rem;
+            }
+        }
+
+        .errors-container {
+            margin: 0 0 1.5rem 0;
+        }
+    }
+}

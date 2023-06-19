@@ -1,0 +1,59 @@
+@use 'src/global/_variables.scss';
+
+.checkbox {
+	&.disabled {
+		* {
+			color: variables.$disabled-color;
+		}
+
+		label {
+			&:hover .icon,
+			&:active .icon {
+				transform: none;
+			}
+
+			.icon {
+				-webkit-transition-property: none;
+				-moz-transition-property: none;
+				-o-transition-property: none;
+				transition-property: none;
+				transition: none;
+			}
+		}
+	}
+
+	label {
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		gap: 0.2rem;
+
+		.icon {
+			width: 35px;
+			height: 35px;
+			transition: all 0.1s cubic-bezier(0.445, 0.05, 0.14, 0.49);
+		}
+
+		&:hover {
+			.icon {
+				transform: scale(1.1);
+			}
+		}
+
+		&:active {
+			.icon {
+				transform: scale(0.9);
+			}
+		}
+
+		input {
+			width: 1px;
+			height: 1px;
+			opacity: 0;
+
+			&:checked {
+				font-weight: bold;
+			}
+		}
+	}
+}

@@ -1,0 +1,36 @@
+@use 'src/global/_variables.scss';
+
+.validation-input {
+    &.correct {
+        border: 1px solid variables.$smooth-green;
+    }
+
+    &.incorrect {
+        border: 1px solid variables.$smooth-red;
+    }
+
+    &.default {
+        border: 1px solid transparent;
+
+        .icon {
+            visibility: hidden;
+        }
+    }
+
+    input {
+        width: 100%;
+        padding: .5rem 0;
+
+        &::-ms-reveal {
+            filter: invert(100%);
+        }
+    }
+
+    .icon {
+        width: 25px;
+        height: 25px;
+        margin: 0 0 0 .5rem;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+    }
+}

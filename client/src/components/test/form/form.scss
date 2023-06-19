@@ -1,0 +1,71 @@
+@use 'src/global/_variables.scss';
+
+.test-response-form {
+	display: grid;
+	gap: 1rem;
+
+	h3 {
+		height: fit-content;
+	}
+
+	.send-test {
+		width: 100%;
+	}
+
+	.loading-icon {
+		padding: 1rem 0;
+		display: flex;
+		justify-content: center;
+	}
+
+	.question-list {
+		height: 100%;
+		display: grid;
+		gap: 1.2rem;
+
+		li {
+			border: 1px solid transparent;
+			height: fit-content;
+			display: grid;
+			gap: 0.5rem;
+
+			&.correct {
+				border: 1px solid variables.$smooth-green;
+
+				.checkbox label span {
+					color: variables.$smooth-green;
+				}
+			}
+
+			&.incorrect {
+				border: 1px solid variables.$smooth-red;
+
+				.checkbox label span {
+					color: variables.$smooth-red;
+				}
+			}
+
+			h3 {
+				font-size: 1.5rem;
+			}
+
+			ul {
+				display: grid;
+				gap: 0.05rem;
+
+				li {
+					padding: 0 1rem 0 0;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+
+					.checkbox {
+						label .icon {
+							width: 30px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

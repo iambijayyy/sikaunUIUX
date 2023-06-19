@@ -1,0 +1,20 @@
+@use 'src/global/_variables.scss';
+
+.logo-container {
+    display: flex;
+    align-items: center;
+
+    .logo {
+        aspect-ratio: 1/1;
+        width: 45px;
+        height: 45px;
+        padding: 0 1rem 0 0;
+    }
+
+    h1 {
+        color: variables.$main-text-color;
+        font-family: variables.$secondary-font;
+        font-weight: normal;
+        font-size: 1.1rem;
+    }
+}

@@ -1,0 +1,66 @@
+@use 'src/global/animations.scss';
+@use 'src/global/_variables.scss';
+
+.preload {
+	.video {
+		background: variables.$black;
+		height: 80vh;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.hotbar {
+		margin: 0.6rem 0 0 0;
+
+		.episode-info-container {
+			.info {
+				div {
+					@include animations.preload();
+					width: 90%;
+					height: 2.18rem;
+				}
+			}
+
+			.main-actions {
+				.creator-info {
+					width: 15rem;
+
+					.user-img {
+						@include animations.preload();
+						border-radius: 50%;
+						aspect-ratio: 1/1;
+						width: 2.2rem;
+						height: 2.2rem;
+						overflow: hidden;
+					}
+
+					.user-name {
+						@include animations.preload();
+						border-radius: 20px;
+						width: 80%;
+						height: 1.5rem;
+					}
+				}
+
+				.right {
+					.action-button.like {
+						padding: 0.5rem 2rem;
+						width: 9.6rem;
+
+						.icon {
+							font-size: 1.87rem;
+						}
+
+						.quantity {
+							@include animations.preload();
+							height: 1.2rem;
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
