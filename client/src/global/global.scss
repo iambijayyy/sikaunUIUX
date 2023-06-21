@@ -1,0 +1,66 @@
+@forward './components/buttons.scss';
+@forward './components/inputs.scss';
+@use './_variables.scss';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    font-family: variables.$primary-font;
+    font-weight: normal;
+    font-size: 1rem;
+    color: variables.$main-text-color;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: variables.$fifth-color;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: variables.$third-color;
+        border-radius: 10px;
+    }
+}
+
+body {
+    background: variables.$primary-background;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    background: transparent;
+    border: none;
+}
+
+main {
+    min-height: 100vh;
+    padding: 0 2rem;
+}
+
+section {
+    h2 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        padding: 1.2rem 0;
+    }
+}
+
+.page {
+    .search-section {
+        margin: 2rem 0;
+    }
+}
+
+@media (max-width: variables.$mobile-breakpoint) {
+    main {
+        padding: 0 1rem;
+    }
+}
