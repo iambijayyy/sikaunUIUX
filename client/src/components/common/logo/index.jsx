@@ -7,7 +7,7 @@ function Logo() {
     <Link to="/">
       <div className="logo-container">
         <img className="logo" src={LOGO_ICON} alt="CoursesLive" />
-        <h1>Adhyayan</h1>
+        <h1>Sikaun</h1>
       </div>
     </Link>
   );
