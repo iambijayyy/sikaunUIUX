@@ -8,7 +8,7 @@ function Credits() {
             <div className="credits">
                 <Logo />
                 <p>
-                    Become the professional you always wanted to be
+                    Learn what you want with our courses.
                 </p>
             </div>
         </div>
