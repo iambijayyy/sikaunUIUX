@@ -1,7 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "This is the Sikaun server",
+  "description": "This is the CoursesLive server",
   "private": true,
   "main": "index.js",
   "type": "module",
@@ -13,7 +13,7 @@
     "Node",
     "Express"
   ],
-  "author": "itisbijayyy",
+  "author": "BryantDev_",
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.0.1",
