@@ -1,51 +1,42 @@
 import mongoose from 'mongoose';
 const { Schema, model } = mongoose;
 
-const userSchema = new Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    profileImage: {
-        type: String
-    },
-    lastName: {
-        type: String,
-        required: true
-    },
-    mail: {
-        type: String,
-        required: true
-    },
-    password: {
-        type: String,
-        required: true
-    },
-    role: {
-        type: String,
-        required: true
-    },
-    courses: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Course'
-    }],
-    verificationCode: {
-        type: String
-    }
+const resultSchema = new Schema({
+	test: {
+		type: Schema.Types.ObjectId,
+		ref: 'Test',
+		required: true,
+	},
+
+	user: {
+		type: Schema.Types.ObjectId,
+		ref: 'User',
+		required: true,
+	},
+
+	selected_options: {
+		type: [{ id: String }],
+		required: true,
+	},
+
+	solved_on: {
+		type: Schema.Types.Date,
+		required: true,
+	},
 });
 
+resultSchema.set('toJSON', {
+	transform: (document, returnedObject) => {
+		returnedObject.id = returnedObject._id;
+		returnedObject.selectedOptions = returnedObject.selected_options;
+		returnedObject.solvedOn = returnedObject.solved_on;
 
-userSchema.set('toJSON', {
-    transform: (document, returnedObject) => {
-        returnedObject.id = returnedObject._id;
+		delete returnedObject._id;
+		delete returnedObject.__v;
+		delete returnedObject.solved_on;
+		delete returnedObject.selected_options;
+	},
+});
 
-        delete returnedObject.password;
-        delete returnedObject._id;
-        delete returnedObject.__v;
-    }
-})
-
-
-const User = model('User', userSchema);
-
-export default User;
+const Result = model('Result', resultSchema);
+export default Result;
