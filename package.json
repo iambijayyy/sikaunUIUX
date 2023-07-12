@@ -1,7 +1,7 @@
 {
-  "name": "sikaun",
+  "name": "courseslive",
   "version": "1.0.0",
-  "description": "This is Sikaun",
+  "description": "This is CoursesLive.",
   "private": true,
   "main": "index.js",
   "workspaces": [
@@ -18,7 +18,7 @@
     "Node",
     "Express"
   ],
-  "author": "itisbijayyy",
+  "author": "BryantDev_",
   "license": "MIT",
   "dependencies": {
     "@emailjs/browser": "^3.11.0",

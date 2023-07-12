@@ -32,7 +32,7 @@ export default function AboutUs() {
         <p>
           1. <strong>Expert Instructors:</strong> Our courses are created and
           taught by industry professionals and subject matter experts who bring
-          real-world experience to the virtual classroom.
+          real-world experience to the different episodes.
         </p>
         <p>
           2. <strong>Diverse Course Catalog:</strong> We offer a diverse range
@@ -42,7 +42,7 @@ export default function AboutUs() {
         <p>
           3. <strong>Interactive Learning:</strong> Our platform utilizes
           cutting-edge technology to deliver engaging and interactive learning
-          experiences. From quizzes and assignments to discussions and
+          experiences. From quizzes to discussions and
           simulations, you'll have ample opportunities to apply what you've
           learned.
         </p>

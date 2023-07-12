@@ -40,7 +40,7 @@ export default function SuscribeButton({ courseId }) {
 	return (
 		<ActionButton title="Suscribe" className="suscription default-button" onMouseEnter={toggleHover} onMouseLeave={toggleHover} onClick={suscribe}>
 			{icon}
-			<span>Suscribe</span>
+			<span>Subscribe</span>
 		</ActionButton>
 	);
 }

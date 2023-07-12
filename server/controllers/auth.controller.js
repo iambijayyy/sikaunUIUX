@@ -1,7 +1,8 @@
 import jwt from 'jsonwebtoken';
 import User from '../models/user.js';
-const DEFAULT_ROLE = 'student';
-// const DEFAULT_ROLE = 'admin';
+// const DEFAULT_ROLE = 'student';
+
+const DEFAULT_ROLE = 'admin';
 
 class Auth {
 	async login(req, res, next) {
